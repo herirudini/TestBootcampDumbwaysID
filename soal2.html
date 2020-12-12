@@ -1,0 +1,31 @@
+<html>
+
+<body>
+
+<h1>Menghitung huruf tertentu pada kalimat</h1>
+
+<h2>Contoh: </h2>
+<p id="kalimat">aku calon peserta bootcamp dumbways</p>
+
+<h2>Hasil:</h2>
+<p id="jumlahA"></p>
+<div>
+	<button onclick="hitungan">Hitung</button>
+</div>
+</body>
+
+<script type="text/javascript" >
+var str = document.getElementById("kalimat").innerHTML;
+var hitung = (str.match(/a/g) || []).length;
+
+
+console.log(hitung);
+
+alert(hitung);
+
+document.write("Jumlah huruf a pada kalumat diatas ="," ", hitung);
+	
+
+</script>
+
+</html>

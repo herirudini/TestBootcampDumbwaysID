@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<title>Denda Memi</title>
+</head>
+
+
+<body>
+
+<h1>Memi Pinjam Buku</h1>
+<p>Memi pinjam buku di perpus, yaitu buku pelajaran, novel, cerpen. Batas maksimal waktu pinjam adalah 10 hari.
+Jika telat maka didenda. Denda buku pelajaran 1000, novel 2000, cerpen 1500. Semuanya dihitung per-Hari.</p>
+
+<div class="hitung">
+	<h2>Perhitungan denda</h2>
+		<table>
+				<thead>
+					<tr>
+						<th>Lama Pinjaman</th>
+						<th>Offset</th>
+						<th>Denda Buku Pelajaran</th>
+						<th>Denda Novel</th>
+						<th>Denda Cerpen</th>
+						<th>Total Denda</th>
+    				</tr>
+    			</thead>
+    			
+    			<tbody id="dendaMemi">
+    			</tbody>
+    		</table>
+</div>
+
+</body>
+
+<style type="text/css">
+table {
+	padding: 10;
+	table-layout: auto;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+th {
+	font-weight: bolder;
+	background-color: orange;
+	color: white;
+}
+th, td {
+	text-align: center;
+	padding: 16px;
+}
+
+</style>
+
+<script type="text/javascript" >
+	var lamaPinjam = prompt("Berapa hari Memi pinjam buku?")
+	var offset = lamaPinjam - 10;
+	var dendaBupel = offset * 1000;
+	var dendaNovel = offset * 2000;
+	var dendaCerpen = offset * 1500;
+	var totalDenda = dendaBupel + dendaNovel + dendaCerpen;
+
+if (lamaPinjam <= 10) {offset=0; dendaBupel=0; dendaNovel=0; dendaCerpen=0; totalDenda = 0;
+}
+
+
+	const keterangan = document.querySelector("#dendaMemi")
+	let row = document.createElement('tr');
+		row.innerHTML = "<td>" + lamaPinjam + "</td>";
+		row.innerHTML += "<td>" + offset + "</td>";
+		row.innerHTML += "<td>" + dendaBupel + "</td>";
+		row.innerHTML += "<td>" + dendaNovel + "</td>";
+		row.innerHTML += "<td>" + dendaCerpen + "</td>";
+		row.innerHTML += "<td>" + totalDenda + "</td>";
+		
+		keterangan.appendChild(row);
+
+</script>
+
+</html>
